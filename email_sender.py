@@ -28,7 +28,7 @@ def send_deals_email(store_results: list[dict]) -> None:
 
     params = {
         "from":    FROM_EMAIL,
-        "to":      [TO_EMAIL],
+        "to":      TO_EMAIL,
         "subject": subject,
         "html":    body_html,
         "text":    body_plain,
