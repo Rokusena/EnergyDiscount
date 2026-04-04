@@ -1,160 +1,121 @@
 # EnergyDiscount
 
-Monitors Lithuanian grocery store deal catalogs and emails you when energy drinks are on sale.
-
-Scrapes [raskakcija.lt](https://www.raskakcija.lt), runs OCR on each catalog page image (Tesseract, Lithuanian), filters for energy drink keywords, and sends a formatted HTML email via [Resend](https://resend.com).
-
-## Stores monitored
-
-IKI · Lidl · Maxima · Norfa · Rimi · Šilas · Promo · Aibė · Vynoteka · Senukai · Ermitažas · JYSK · Moki Veži
-
-## Keywords detected
-
-`energetinis` · `energinis` · `energy` · `monster` · `redbull` · `red bull` · `burn` · `hell` · `rockstar` · `battery` · `gėrimas` (near brand name)
-
----
-
-## Setup
-
-### 1. Prerequisites
-
-- Python 3.11+
-- **Tesseract OCR** installed system-wide with Lithuanian language data:
-
-  **Ubuntu / Debian**
-  ```bash
-  sudo apt install tesseract-ocr tesseract-ocr-lit
-  ```
-
-  **macOS (Homebrew)**
-  ```bash
-  brew install tesseract
-  # Then download the Lithuanian trained data:
-  # https://github.com/tesseract-ocr/tessdata/blob/main/lit.traineddata
-  # Place it in: $(brew --prefix)/share/tessdata/
-  ```
-
-  **Windows**
-  - Download and run the installer from https://github.com/UB-Mannheim/tesseract/wiki
-  - During install tick "Lithuanian" under additional language data
-  - Add the install directory (e.g. `C:\Program Files\Tesseract-OCR`) to your `PATH`
-
-- A [Resend](https://resend.com) account with an API key and a verified sender domain
-
-### 2. Create a virtual environment and install dependencies
-
-```bash
-python -m venv .venv
-
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-### 3. Configure environment variables
-
-Edit `.env`:
-
-```env
-RESEND_API_KEY=re_xxxxxxxxxxxx
-TO_EMAIL=you@example.com
-FROM_EMAIL=deals@yourdomain.com
-```
-
-> `FROM_EMAIL` must be on a domain you have verified with Resend.
-
----
-
-## Running
-
-### Run once immediately (testing / manual trigger)
-
-```bash
-python main.py --run-now
-```
-
-### Run on a schedule (every Monday at 08:00 local time)
-
-```bash
-python main.py
-```
-
-The process stays alive and fires automatically each Monday. Use a process manager (below) to keep it running.
-
----
-
-## Hosting on a VPS
-
-### Option A — systemd (recommended)
-
-Create `/etc/systemd/system/energy-discount.service`:
-
-```ini
-[Unit]
-Description=EnergyDiscount Scraper
-After=network.target
-
-[Service]
-WorkingDirectory=/home/youruser/EnergyDiscount
-ExecStart=/home/youruser/EnergyDiscount/.venv/bin/python main.py
-Restart=on-failure
-EnvironmentFile=/home/youruser/EnergyDiscount/.env
-User=youruser
-
-[Install]
-WantedBy=multi-user.target
-```
-
-```bash
-sudo systemctl enable energy-discount
-sudo systemctl start energy-discount
-journalctl -u energy-discount -f    # watch logs
-```
-
-### Option B — screen / tmux (quick & dirty)
-
-```bash
-screen -S energy
-python main.py
-# Ctrl+A then D to detach
-```
+Scrapes Lithuanian grocery store catalogs from [raskakcija.lt](https://www.raskakcija.lt) and emails you when energy drinks are on sale. Runs automatically every week via GitHub Actions — no server needed.
 
 ---
 
 ## How it works
 
-```
-main.py  (schedule: every Monday 08:00)
-  └── scraper.py      → finds latest catalog URLs on raskakcija.lt
-  └── scraper.py      → fetches each catalog page, extracts image URLs
-  └── ocr.py          → downloads images, runs Tesseract (Lithuanian + English),
-                         filters for energy drink keywords, extracts prices
-  └── seen.py         → skips catalogs already processed (seen_catalogs.json)
-  └── email_sender.py → sends one HTML summary email via Resend
+1. **Scrape** — fetches the latest catalog page for each store
+2. **Pre-filter** — Tesseract OCR scans every page for energy drink keywords (~0.3s/page, free)
+3. **Extract** — GPT-4o vision analyses only the matching pages and returns structured deal data
+4. **Email** — sends one HTML summary email via Resend with all deals grouped by store
+5. **Deduplicate** — tracks processed catalogs in `seen_catalogs.json` so you only get emailed about new ones
+
+---
+
+## Stores monitored
+
+IKI · Lidl · Maxima · Norfa · Rimi · Šilas · Promo · Aibė · Vynoteka
+
+---
+
+## Setup
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yourusername/EnergyDiscount.git
+cd EnergyDiscount
 ```
 
-## File overview
+### 2. Install Tesseract with Lithuanian language data
+
+**Windows**
+- Download the installer from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+- During install, tick **Lithuanian** under additional language data
+- Default install path: `C:\Program Files\Tesseract-OCR\`
+
+**Ubuntu / Debian**
+```bash
+sudo apt install tesseract-ocr tesseract-ocr-lit
+```
+
+**macOS**
+```bash
+brew install tesseract
+# Download lit.traineddata from github.com/tesseract-ocr/tessdata
+# Place it in: $(brew --prefix)/share/tessdata/
+```
+
+### 3. Install Python dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure `.env`
+
+```env
+RESEND_API_KEY=re_xxxxxxxxxxxx
+TO_EMAIL=you@example.com
+FROM_EMAIL=deals@yourdomain.com
+OPENAI_API_KEY=sk-...
+```
+
+- `TO_EMAIL` accepts multiple addresses: `a@x.com,b@x.com`
+- `FROM_EMAIL` must be on a domain verified with Resend
+- Get a Resend key at [resend.com](https://resend.com)
+- Get an OpenAI key at [platform.openai.com](https://platform.openai.com)
+
+### 5. Run manually
+
+```bash
+python main.py --run-now
+```
+
+---
+
+## GitHub Actions (recommended)
+
+The included workflow runs every **Monday and Tuesday at 09:00 Vilnius time** and commits `seen_catalogs.json` back to the repo so state persists between runs.
+
+### Setup
+
+1. Push the repo to GitHub
+
+2. Add these repository secrets under **Settings → Secrets and variables → Actions**:
+
+   | Secret | Value |
+   |--------|-------|
+   | `RESEND_API_KEY` | Your Resend API key |
+   | `TO_EMAIL` | Recipient email(s), comma-separated |
+   | `FROM_EMAIL` | Verified sender address |
+   | `OPENAI_API_KEY` | Your OpenAI API key |
+
+3. The workflow at `.github/workflows/scraper.yml` runs automatically. You can also trigger it manually from the **Actions** tab.
+
+---
+
+## Project structure
 
 | File | Purpose |
 |------|---------|
-| `main.py` | Entry point + Monday scheduler |
+| `main.py` | Entry point — runs once with `--run-now` or schedules weekly |
 | `scraper.py` | Finds catalog URLs and image lists on raskakcija.lt |
-| `ocr.py` | OCR pipeline — keyword filtering + price extraction |
-| `email_sender.py` | HTML email builder + Resend sender |
-| `seen.py` | Persistent deduplication via `seen_catalogs.json` |
-| `config.py` | Env vars, store list, keywords, OCR confidence threshold |
-| `requirements.txt` | Python dependencies |
-| `.env` | Your secrets (not committed to git) |
+| `ocr.py` | Two-stage pipeline: Tesseract pre-filter + GPT-4o extraction |
+| `email_sender.py` | Builds HTML email and sends via Resend |
+| `seen.py` | Tracks processed catalogs; skips until expiry date passes |
+| `config.py` | All config in one place — env vars, store list, keywords |
+| `seen_catalogs.json` | Auto-generated; committed by CI to persist state |
+| `.env` | Your secrets — never committed |
 
 ---
 
 ## Notes
 
-- OCR pages with mean confidence below 60 % are skipped automatically.
-- Images are processed **sequentially** to keep memory usage low.
-- `seen_catalogs.json` is created automatically on first run.
-- Prices extracted from OCR snippets are best-effort — always verify before buying.
+- Catalog pages are processed sequentially to keep memory usage low
+- Tesseract is used only as a cheap keyword filter — GPT-4o does the actual extraction
+- GPT-4o is called with batches of up to 4 images per request to minimise API cost
+- Each store's catalog is re-checked automatically once its listed expiry date passes
+- Prices are extracted by GPT-4o directly from the catalog images — verify before buying
