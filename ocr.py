@@ -10,6 +10,8 @@ import logging
 import time
 from itertools import islice
 
+import sys
+
 import requests
 import pytesseract
 from PIL import Image
@@ -17,7 +19,8 @@ from openai import OpenAI
 
 log = logging.getLogger(__name__)
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+if sys.platform == "win32":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 HEADERS          = {"User-Agent": "Mozilla/5.0 (compatible; EnergyBot/1.0)"}
 DOWNLOAD_TIMEOUT = 60
