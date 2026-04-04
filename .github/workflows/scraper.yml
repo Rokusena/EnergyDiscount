@@ -1,0 +1,46 @@
+name: Energy Drink Scraper
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'  # Monday 07:00 UTC = 09:00 Vilnius (EEST summer)
+    - cron: '0 7 * * 2'  # Tuesday 07:00 UTC
+  workflow_dispatch:       # manual trigger from GitHub Actions UI
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # needed to push seen_catalogs.json back
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Tesseract + Lithuanian language data
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-lit
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python main.py --run-now
+
+      - name: Save seen catalogs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add seen_catalogs.json
+          git diff --staged --quiet || git commit -m "chore: update seen catalogs"
+          git push

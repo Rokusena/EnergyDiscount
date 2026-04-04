@@ -1,0 +1,8 @@
+requests==2.32.3
+beautifulsoup4==4.12.3
+openai>=1.51.0
+pytesseract==0.3.13
+Pillow==10.4.0
+resend==2.3.0
+schedule==1.2.2
+python-dotenv==1.0.1
