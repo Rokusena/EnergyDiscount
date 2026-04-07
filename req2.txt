@@ -1,0 +1,6 @@
+playwright
+playwright-stealth
+parsel
+openai
+plotly
+python-dotenv
