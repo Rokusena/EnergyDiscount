@@ -5,9 +5,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
-# Comma-separated list of recipients, e.g. "a@x.com,b@x.com"
-TO_EMAIL       = [e.strip() for e in os.getenv("TO_EMAIL", "").split(",") if e.strip()]
 FROM_EMAIL     = os.getenv("FROM_EMAIL", "")
+
+_emails_file = os.path.join(os.path.dirname(__file__), "emails.txt")
+if os.path.exists(_emails_file):
+    with open(_emails_file) as _f:
+        TO_EMAIL = [line.strip() for line in _f if line.strip() and not line.startswith("#")]
+else:
+    TO_EMAIL = [e.strip() for e in os.getenv("TO_EMAIL", "").split(",") if e.strip()]
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
 if not all([RESEND_API_KEY, TO_EMAIL, FROM_EMAIL, OPENAI_API_KEY]):  # TO_EMAIL is a list

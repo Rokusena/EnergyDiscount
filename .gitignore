@@ -6,7 +6,8 @@ __pycache__/
 # C extensions
 *.so
 
-.env 
+.env
+emails.txt
 
 # Distribution / packaging
 .Python

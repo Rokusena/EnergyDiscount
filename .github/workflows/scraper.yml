@@ -32,10 +32,12 @@ jobs:
       - name: Run scraper
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          TO_EMAIL: ${{ secrets.TO_EMAIL }}
           FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python main.py --run-now
+          TO_EMAIL: ${{ secrets.TO_EMAIL }}
+        run: |
+          echo "$TO_EMAIL" | tr ',' '\n' > emails.txt
+          python main.py --run-now
 
       - name: Save seen catalogs
         run: |
