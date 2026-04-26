@@ -1,3 +1,38 @@
 {
-  
+  "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20260427--20260503.htm": {
+    "seen_at": "2026-04-26T18:57:49.715801+00:00",
+    "expires": "2026-05-03"
+  },
+  "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260427--20260503.htm": {
+    "seen_at": "2026-04-26T18:59:28.726038+00:00",
+    "expires": "2026-05-03"
+  },
+  "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20260421--20260427.htm": {
+    "seen_at": "2026-04-26T19:01:59.936277+00:00",
+    "expires": "2026-04-27"
+  },
+  "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20260416--20260429.htm": {
+    "seen_at": "2026-04-26T19:04:30.798719+00:00",
+    "expires": "2026-04-29"
+  },
+  "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20260421--20260427.htm": {
+    "seen_at": "2026-04-26T19:06:00.445596+00:00",
+    "expires": "2026-04-27"
+  },
+  "https://www.raskakcija.lt/silas-leidinys.htm": {
+    "seen_at": "2026-04-26T19:06:52.301293+00:00",
+    "expires": "2026-05-05"
+  },
+  "https://www.raskakcija.lt/promo-leidinys.htm": {
+    "seen_at": "2026-04-26T19:08:00.596997+00:00",
+    "expires": "2026-04-28"
+  },
+  "https://www.raskakcija.lt/aibe-leidinys.htm": {
+    "seen_at": "2026-04-26T19:09:20.639941+00:00",
+    "expires": "2026-05-05"
+  },
+  "https://www.raskakcija.lt/vynoteka-leidinys.htm": {
+    "seen_at": "2026-04-26T19:10:06.465647+00:00",
+    "expires": "2026-04-26"
+  }
 }
