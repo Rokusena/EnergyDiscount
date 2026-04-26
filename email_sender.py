@@ -103,7 +103,8 @@ def _build_html(store_results: list[dict], today: str) -> str:
     date_disp = today.replace("-", "\u00b7")
     mon      = dt - timedelta(days=dt.weekday())
     sun      = mon + timedelta(days=6)
-    week_lbl = f"W{week_num:02d} \u00b7 {mon.strftime('%m\u00b7%d')} \u2192 {sun.strftime('%m\u00b7%d')}"
+    _dot_fmt = "%m\u00b7%d"
+    week_lbl = f"W{week_num:02d} \u00b7 {mon.strftime(_dot_fmt)} \u2192 {sun.strftime(_dot_fmt)}"
 
     all_matches = [m for r in store_results for pg in r["pages"] for m in pg["matches"]]
     n_deals  = len(all_matches)
