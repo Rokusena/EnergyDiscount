@@ -106,5 +106,13 @@
   "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20260820--20260902.htm": {
     "seen_at": "2026-08-24T08:03:54.815597+00:00",
     "expires": "2026-09-02"
+  },
+  "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20260825--20260831.htm": {
+    "seen_at": "2026-08-25T07:48:22.489056+00:00",
+    "expires": "2026-08-31"
+  },
+  "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20260825--20260831.htm": {
+    "seen_at": "2026-08-25T07:49:57.651216+00:00",
+    "expires": "2026-08-31"
   }
 }
