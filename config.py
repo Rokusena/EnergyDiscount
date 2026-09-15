@@ -14,6 +14,10 @@ if not all([RESEND_API_KEY, TO_EMAIL, FROM_EMAIL, OPENAI_API_KEY]):  # TO_EMAIL 
 
 BASE_URL = "https://www.raskakcija.lt"
 
+# Where the "check all" button in the deal emails points. The #deals hash makes
+# the site open the full list on arrival instead of just landing on the page.
+DEALS_URL = os.getenv("DEALS_URL", "https://rokusena.xyz/#deals")
+
 # Stores that use slug-based catalog links on the homepage
 STORES_SLUG = [
     {"name": "IKI",    "slug": "naujausias-iki-kaininis-katalogas"},

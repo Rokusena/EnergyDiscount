@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta
 
 import resend
 
-from config import RESEND_API_KEY, TO_EMAIL, FROM_EMAIL
+from config import RESEND_API_KEY, TO_EMAIL, FROM_EMAIL, DEALS_URL
 
 resend.api_key = RESEND_API_KEY
 log = logging.getLogger(__name__)
@@ -248,6 +248,15 @@ def _build_html(store_results: list[dict], today: str) -> str:
 
   {cta_rows}
 
+  <tr><td class="px" style="padding:22px 28px 0 28px;">
+    <a href="{DEALS_URL}" style="display:block;text-align:center;background:{_INK};color:#fff;font-family:{_MONO};font-size:12px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:16px 10px;text-decoration:none;border:2px solid {_INK};">
+      ✓ PATIKRINTI VISUS →
+    </a>
+    <div class="muted" style="font-family:{_MONO};font-size:10px;color:{_MUTED};text-align:center;padding-top:6px;letter-spacing:0.04em;">
+      visi pasiūlymai vienoje vietoje, rikiuota pagal kainą už litrą
+    </div>
+  </td></tr>
+
   <tr><td class="px" style="padding:20px 28px 12px 28px;">
     <div class="dash" style="font-family:{_MONO};font-size:11px;color:{_DASH};letter-spacing:0.3em;">\u2702 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012 \u2012</div>
   </td></tr>
@@ -370,5 +379,10 @@ def _build_plain(store_results: list[dict], today: str) -> str:
                     price_str += f"  (buvo {m['regular_price']})"
                 lines.append(f"\u2022 {m['snippet'][:100].strip()}  {price_str}")
         lines.append("")
-    lines += ["=" * 50, "Duomenys i\u0161 raskakcija.lt \u00b7 OCR, gali b\u016bti netikslu"]
+    lines += [
+        "=" * 50,
+        f"PATIKRINTI VISUS: {DEALS_URL}",
+        "",
+        "Duomenys i\u0161 raskakcija.lt \u00b7 OCR, gali b\u016bti netikslu",
+    ]
     return "\n".join(lines)
