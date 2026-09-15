@@ -13,6 +13,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from itertools import islice
 
+import threading
+
 import numpy as np
 import requests
 from PIL import Image
@@ -43,7 +45,7 @@ def _get_reader():
         # Each worker OCRs its own page, so give each one a slice of the cores
         # instead of letting every torch op fight over all of them.
         torch.set_num_threads(max(1, (os.cpu_count() or 4) // OCR_WORKERS))
-        log.info("  [filter] Loading EasyOCR models (lt+en), %d workers…", OCR_WORKERS)
+        log.info("  [filter] Loading EasyOCR models (lt+en), ~10s, then %d workers…", OCR_WORKERS)
         _reader = easyocr.Reader(["lt", "en"], gpu=False, verbose=False)
     return _reader
 
@@ -146,6 +148,18 @@ def filter_candidate_pages(image_urls: list[str]) -> list[str]:
     # reader rather than racing to build their own.
     reader = _get_reader()
 
+    # OCR is silent for ~25s (model load, then the first pages finishing),
+    # which is indistinguishable from a hang — so report progress as we go.
+    done = 0
+    done_lock = threading.Lock()
+
+    def note_progress() -> None:
+        nonlocal done
+        with done_lock:
+            done += 1
+            if done % 10 == 0 or done == len(pages):
+                log.info("  [filter] %d/%d pages checked…", done, len(pages))
+
     def check(page: tuple[str, bytes]) -> tuple[str, bool]:
         url, data = page
         filename = url.split("/")[-1]
@@ -162,10 +176,10 @@ def filter_candidate_pages(image_urls: list[str]) -> list[str]:
             hit    = any(kw in lower for kw in FILTER_KEYWORDS)
         except Exception as exc:
             log.warning("  [filter] %s — OCR error (%s), keeping as candidate", filename, exc)
+            note_progress()
             return url, True
 
-        if not hit:
-            log.info("  [filter] %s — skipped", filename)
+        note_progress()
         return url, hit
 
     # Phase 2 — OCR in parallel; this is the CPU-bound part.
