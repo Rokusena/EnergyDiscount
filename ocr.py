@@ -35,7 +35,7 @@ def _get_reader():
 HEADERS          = {"User-Agent": "Mozilla/5.0 (compatible; EnergyBot/1.0)"}
 DOWNLOAD_TIMEOUT = 60
 API_TIMEOUT      = 60
-MODEL            = "gpt-4o"
+MODEL = "gpt-5.6-luna"
 BATCH_SIZE       = 4
 
 FILTER_KEYWORDS = [
