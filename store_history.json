@@ -1,1 +1,23 @@
-{}
+{
+  "IKI": [
+    {
+      "seen_at": "2026-09-15T07:48:40Z",
+      "expires": "2026-09-20",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20260914--20260920.htm"
+    }
+  ],
+  "Lidl": [
+    {
+      "seen_at": "2026-09-15T07:48:40Z",
+      "expires": "2026-09-20",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260914--20260920.htm"
+    }
+  ],
+  "Maxima": [
+    {
+      "seen_at": "2026-09-15T08:38:22Z",
+      "expires": "2026-09-21",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20260915--20260921.htm"
+    }
+  ]
+}

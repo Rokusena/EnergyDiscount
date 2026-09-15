@@ -55,8 +55,19 @@ OPENAI_API_KEY=sk-...
 ### 4. Run manually
 
 ```bash
-python main.py --run-now
+python main.py --run-now                 # ~75% of your cores
+python main.py --run-now --workers 4     # pin the OCR pool size
 ```
+
+| Flag / env var | Default | Purpose |
+|---|---|---|
+| `--workers` / `OCR_WORKERS` | ~75% of cores | Pages OCR'd in parallel |
+| `--download-workers` / `DOWNLOAD_WORKERS` | 4 | Concurrent downloads — raising it makes raskakcija.lt reset connections |
+| `MAX_OCR_PX` | 1200 | Pre-filter downscale; full-resolution images are still what GPT sees |
+
+Note that EasyOCR already spreads a single page across every core, so raising
+`--workers` far beyond your core count makes it slower, not faster — the
+cheaper lever is `MAX_OCR_PX`.
 
 ---
 
@@ -102,8 +113,11 @@ The included workflow runs **daily at 09:00 Vilnius time** and commits `seen_cat
 
 ## Notes
 
-- Catalog pages are processed sequentially to keep memory usage low
-- EasyOCR is used only as a free, open-source keyword filter — GPT-4o does the actual extraction
+- Only `/admin/contentfiles/` images are read — the site also serves small
+  `/imgcache/<w>.<h>/` thumbnails and ads, which are over half of every page list
+- Failed downloads are retried with backoff; if most of a catalog's pages still
+  fail, the run raises instead of recording the store as "checked, nothing found"
+- EasyOCR is used only as a free, open-source keyword filter — GPT does the actual extraction
 - GPT-4o is called with batches of up to 4 images per request to minimise API cost
 - Each store's catalog is re-checked automatically once its listed expiry date passes
 - Prices are extracted by GPT-4o directly from the catalog images — verify before buying

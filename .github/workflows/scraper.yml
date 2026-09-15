@@ -36,6 +36,9 @@ jobs:
           TO_EMAIL: ${{ secrets.TO_EMAIL }}
           FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # GitHub's free runners are 4 vCPU; EasyOCR already spreads one page
+          # across all cores, so a few workers is the useful range.
+          OCR_WORKERS: '3'
         run: python main.py --run-now
 
       - name: Save state files

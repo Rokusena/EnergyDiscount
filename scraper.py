@@ -168,15 +168,22 @@ def _find_leidinys_catalogs() -> list[dict]:
 # Helpers
 # ---------------------------------------------------------------------------
 
+# raskakcija.lt serves full-size catalog scans (~1062x1753) from
+# /admin/contentfiles/, while /imgcache/<w>.<h>/ holds small resized
+# derivatives — site chrome, ads and thumbnails. Only the former are pages
+# worth reading, and skipping the rest removes over half the OCR work.
+CATALOG_IMAGE_RE = re.compile(r"/admin/contentfiles/[^/]+\.(jpg|jpeg|png|webp)(\?|$)", re.IGNORECASE)
+
+
 def _is_catalog_image(src: str) -> bool:
-    """Heuristic: exclude logos/icons, require a raster image extension."""
+    """True only for full-size catalog page scans, not ads or thumbnails."""
     if not src:
         return False
     low = src.lower()
     for skip in ("logo", "icon", "avatar", "banner", "sprite", "thumb"):
         if skip in low:
             return False
-    return bool(re.search(r"\.(jpg|jpeg|png|webp)(\?|$)", low))
+    return bool(CATALOG_IMAGE_RE.search(low))
 
 
 def _parse_dates_from_text(text: str) -> dict:

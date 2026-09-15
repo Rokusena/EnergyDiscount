@@ -12,6 +12,7 @@ from datetime import date, datetime, timezone
 
 import schedule
 
+import ocr
 from config       import OPENAI_API_KEY
 from scraper      import find_catalog_urls, get_catalog_images
 from ocr          import process_store_images
@@ -65,14 +66,16 @@ def run() -> None:
 
         image_urls = get_catalog_images(catalog_url)
         if not image_urls:
-            log.info("[%s] No images found — marking seen and skipping.", store_name)
-            mark_seen(catalog_url, expires=dates.get("to"))
+            # Almost always a failed fetch rather than a genuinely empty catalog.
+            # Leave it unseen so the next run retries instead of writing off this
+            # catalog's whole cycle.
+            log.warning("[%s] No images found — leaving unseen to retry.", store_name)
             continue
 
         try:
             deals = process_store_images(image_urls, OPENAI_API_KEY)
         except Exception as exc:
-            log.error("[%s] Vision pipeline error: %s", store_name, exc)
+            log.error("[%s] Vision pipeline error (leaving unseen to retry): %s", store_name, exc)
             continue
 
         mark_seen(catalog_url, expires=dates.get("to"))
@@ -129,7 +132,25 @@ def main() -> None:
         action="store_true",
         help="Run immediately instead of waiting for the Monday cron schedule",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        metavar="N",
+        help="Pages to OCR in parallel (default: ~75%% of CPU cores)",
+    )
+    parser.add_argument(
+        "--download-workers",
+        type=int,
+        metavar="N",
+        help="Pages to download at once (default: 4; raising this risks the site refusing connections)",
+    )
     args = parser.parse_args()
+
+    if args.workers:
+        ocr.OCR_WORKERS = args.workers
+    if args.download_workers:
+        ocr.DOWNLOAD_WORKERS = args.download_workers
+    log.info("OCR workers: %d | download workers: %d", ocr.OCR_WORKERS, ocr.DOWNLOAD_WORKERS)
 
     if args.run_now:
         log.info("Manual run triggered via --run-now")
