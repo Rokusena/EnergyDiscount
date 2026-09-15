@@ -1,14 +1,14 @@
 """
 Entry point.
 
-  python main.py           → start scheduler (runs every Monday at 08:00)
+  python main.py           → start scheduler (runs daily at 08:00)
   python main.py --run-now → single immediate run (for testing / manual trigger)
 """
 import argparse
 import logging
 import sys
 import time
-from datetime import datetime
+from datetime import date, datetime, timezone
 
 import schedule
 
@@ -17,6 +17,8 @@ from scraper      import find_catalog_urls, get_catalog_images
 from ocr          import process_store_images
 from email_sender import send_deals_email
 from seen         import is_seen, mark_seen
+from cadence      import record_catalog, get_cadence, check_anomaly
+from deals        import update_deals, prune_expired
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,19 +34,32 @@ def run() -> None:
     catalogs = find_catalog_urls()
     if not catalogs:
         log.info("No catalogs found. Exiting run.")
+        prune_expired()
         return
 
     store_results = []
+    today   = date.today()
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     for catalog in catalogs:
         store_name  = catalog["store_name"]
         catalog_url = catalog["catalog_url"]
         dates       = catalog["dates"]
 
-        # Skip already-processed catalogs
         if is_seen(catalog_url):
             log.info("[%s] Already seen %s — skipping.", store_name, catalog_url)
             continue
+
+        # is_seen() already proves this catalog URL is genuinely new — that's ground
+        # truth and always wins. Cadence is recorded and checked for anomalies only;
+        # it never gates whether a known-new catalog gets processed.
+        record_catalog(store_name, catalog_url, now_iso, dates.get("to"))
+        check_anomaly(store_name, catalog_url, today)
+
+        cadence = get_cadence(store_name)
+        if cadence:
+            log.info("[%s] Observed cadence: every ~%d days on %s (n=%d)",
+                     store_name, cadence["avg_interval_days"], cadence["weekday"], cadence["sample_size"])
 
         log.info("[%s] New catalog: %s", store_name, catalog_url)
 
@@ -60,15 +75,17 @@ def run() -> None:
             log.error("[%s] Vision pipeline error: %s", store_name, exc)
             continue
 
-        # Always mark seen so we don't reprocess on the next cron tick
         mark_seen(catalog_url, expires=dates.get("to"))
-
         log.info("[%s] Total unique deals found: %d", store_name, len(deals))
 
+        scraped_at  = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        valid_until = dates.get("to", "")
+
+        # Update deals.json for this store (even if empty — clears stale entries).
+        if valid_until and valid_until != "nežinoma":
+            update_deals(store_name, deals, valid_until, scraped_at, catalog_url)
+
         if deals:
-            # Adapt flat deal list → pages structure expected by email_sender
-            # Each deal: {product, sale_price, regular_price, note}
-            # email_sender expects matches with: {snippet, price, regular_price}
             matches = [
                 {
                     "snippet":       _format_snippet(d),
@@ -83,6 +100,9 @@ def run() -> None:
                 "dates":       dates,
                 "pages":       [{"page_index": 0, "image_url": "", "matches": matches}],
             })
+
+    # Always prune expired entries and refresh generated_at, even on no-new-deal runs.
+    prune_expired()
 
     if not store_results:
         log.info("No energy drink deals found in any catalog. No email sent.")
@@ -116,9 +136,9 @@ def main() -> None:
         run()
         return
 
-    # Schedule: every Monday at 08:00 local time
-    schedule.every().monday.at("08:00").do(run)
-    log.info("Scheduler started. Next run: every Monday at 08:00.")
+    # Schedule: every day at 08:00 local time
+    schedule.every().day.at("08:00").do(run)
+    log.info("Scheduler started. Next run: daily at 08:00.")
     log.info("Press Ctrl+C to stop.")
 
     try:

@@ -8,8 +8,10 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from datetime import date
 
 from config import BASE_URL, STORES_SLUG, STORES_LEIDINYS
+from seen import get_known_expiry
 
 log = logging.getLogger(__name__)
 
@@ -126,6 +128,14 @@ def _find_leidinys_catalogs() -> list[dict]:
     for store in STORES_LEIDINYS:
         name = store["name"]
         leidinys_url = store["url"]
+
+        # We already know this exact URL's last scraped validity window — if it
+        # hasn't lapsed yet, the site can't possibly have a new catalog there,
+        # so skip the fetch entirely instead of hitting it every day.
+        known_expiry = get_known_expiry(leidinys_url)
+        if known_expiry is not None and date.today() <= known_expiry:
+            log.info("[%s] Still valid until %s — skipping fetch.", name, known_expiry.isoformat())
+            continue
 
         log.info("Fetching leidinys page for %s: %s", name, leidinys_url)
         try:

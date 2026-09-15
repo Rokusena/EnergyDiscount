@@ -1,6 +1,7 @@
 """
 Two-stage OCR pipeline:
-  Stage 1 — Tesseract pre-filter (~0.3s/page, free)
+  Stage 1 — EasyOCR pre-filter, Lithuanian + English (~0.5-1s/page after
+            a one-time model load, free, open-source)
   Stage 2 — GPT-4o vision on candidates only, batched 4 images per call
 """
 import base64
@@ -10,17 +11,26 @@ import logging
 import time
 from itertools import islice
 
-import sys
-
+import numpy as np
 import requests
-import pytesseract
 from PIL import Image
 from openai import OpenAI
 
 log = logging.getLogger(__name__)
 
-if sys.platform == "win32":
-    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# Lazily initialized: loading the EasyOCR models takes ~20-30s, so this
+# happens once per process run on first use, not per image.
+_reader = None
+
+
+def _get_reader():
+    global _reader
+    if _reader is None:
+        import easyocr
+        log.info("  [filter] Loading EasyOCR models (lt+en)…")
+        _reader = easyocr.Reader(["lt", "en"], gpu=False, verbose=False)
+    return _reader
+
 
 HEADERS          = {"User-Agent": "Mozilla/5.0 (compatible; EnergyBot/1.0)"}
 DOWNLOAD_TIMEOUT = 60
@@ -71,12 +81,13 @@ _image_cache: dict[str, bytes] = {}
 
 def filter_candidate_pages(image_urls: list[str]) -> list[str]:
     """
-    Stage 1: Run Tesseract on every page. Return only URLs whose OCR text
+    Stage 1: Run EasyOCR on every page. Return only URLs whose OCR text
     contains at least one energy drink keyword.
-    - On Tesseract failure: include the page anyway (fail-safe).
+    - On OCR failure: include the page anyway (fail-safe).
     - Downloaded bytes are cached for Stage 2.
     """
     candidates = []
+    reader = _get_reader()
 
     for url in image_urls:
         filename = url.split("/")[-1]
@@ -88,12 +99,12 @@ def filter_candidate_pages(image_urls: list[str]) -> list[str]:
         _image_cache[url] = data
 
         try:
-            image = Image.open(io.BytesIO(data)).convert("RGB")
-            text  = pytesseract.image_to_string(image, lang="lit+eng", config="--psm 3")
-            lower = text.lower()
-            hit   = any(kw in lower for kw in FILTER_KEYWORDS)
+            image  = Image.open(io.BytesIO(data)).convert("RGB")
+            pieces = reader.readtext(np.array(image), detail=0, paragraph=True)
+            lower  = " ".join(pieces).lower()
+            hit    = any(kw in lower for kw in FILTER_KEYWORDS)
         except Exception as exc:
-            log.warning("  [filter] %s — Tesseract error (%s), keeping as candidate", filename, exc)
+            log.warning("  [filter] %s — OCR error (%s), keeping as candidate", filename, exc)
             candidates.append(url)
             continue
 

@@ -1,16 +1,17 @@
 # EnergyDiscount
 
-Scrapes Lithuanian grocery store catalogs from [raskakcija.lt](https://www.raskakcija.lt) and emails you when energy drinks are on sale. Runs automatically every week via GitHub Actions — no server needed.
+Scrapes Lithuanian grocery store catalogs from [raskakcija.lt](https://www.raskakcija.lt) and emails you when energy drinks are on sale. Runs automatically every day via GitHub Actions — no server needed. Each store's catalog page is only re-fetched once its last known validity window has actually expired, so the daily check stays cheap.
 
 ---
 
 ## How it works
 
-1. **Scrape** — fetches the latest catalog page for each store
-2. **Pre-filter** — Tesseract OCR scans every page for energy drink keywords (~0.3s/page, free)
+1. **Scrape** — fetches the latest catalog page for each store, skipping any store whose last known catalog hasn't expired yet
+2. **Pre-filter** — EasyOCR (Lithuanian + English) scans every page for energy drink keywords, free and open-source
 3. **Extract** — GPT-4o vision analyses only the matching pages and returns structured deal data
 4. **Email** — sends one HTML summary email via Resend with all deals grouped by store
-5. **Deduplicate** — tracks processed catalogs in `seen_catalogs.json` so you only get emailed about new ones
+5. **Publish** — writes currently-active deals to `deals.json` (product, price, discount, price/L, validity) for the companion portfolio site
+6. **Deduplicate** — tracks processed catalogs in `seen_catalogs.json` so you only get emailed about new ones
 
 ---
 
@@ -29,32 +30,15 @@ git clone https://github.com/yourusername/EnergyDiscount.git
 cd EnergyDiscount
 ```
 
-### 2. Install Tesseract with Lithuanian language data
-
-**Windows**
-- Download the installer from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
-- During install, tick **Lithuanian** under additional language data
-- Default install path: `C:\Program Files\Tesseract-OCR\`
-
-**Ubuntu / Debian**
-```bash
-sudo apt install tesseract-ocr tesseract-ocr-lit
-```
-
-**macOS**
-```bash
-brew install tesseract
-# Download lit.traineddata from github.com/tesseract-ocr/tessdata
-# Place it in: $(brew --prefix)/share/tessdata/
-```
-
-### 3. Install Python dependencies
+### 2. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure `.env`
+No system OCR install needed — the pre-filter uses [EasyOCR](https://github.com/JaidedAI/EasyOCR) (Lithuanian + English), a pure-Python, open-source OCR engine. Its models (~100MB) download automatically on first run and are cached under `~/.EasyOCR` afterward.
+
+### 3. Configure `.env`
 
 ```env
 RESEND_API_KEY=re_xxxxxxxxxxxx
@@ -68,7 +52,7 @@ OPENAI_API_KEY=sk-...
 - Get a Resend key at [resend.com](https://resend.com)
 - Get an OpenAI key at [platform.openai.com](https://platform.openai.com)
 
-### 5. Run manually
+### 4. Run manually
 
 ```bash
 python main.py --run-now
@@ -78,7 +62,7 @@ python main.py --run-now
 
 ## GitHub Actions (recommended)
 
-The included workflow runs every **Monday and Tuesday at 09:00 Vilnius time** and commits `seen_catalogs.json` back to the repo so state persists between runs.
+The included workflow runs **daily at 09:00 Vilnius time** and commits `seen_catalogs.json`, `deals.json`, and `store_history.json` back to the repo so state persists between runs. A daily run doesn't mean daily API spend: each store is skipped until its last known catalog validity window actually expires, so most runs touch only the one or two stores that changed.
 
 ### Setup
 
@@ -101,13 +85,17 @@ The included workflow runs every **Monday and Tuesday at 09:00 Vilnius time** an
 
 | File | Purpose |
 |------|---------|
-| `main.py` | Entry point — runs once with `--run-now` or schedules weekly |
+| `main.py` | Entry point — runs once with `--run-now` or schedules a daily run |
 | `scraper.py` | Finds catalog URLs and image lists on raskakcija.lt |
-| `ocr.py` | Two-stage pipeline: Tesseract pre-filter + GPT-4o extraction |
+| `ocr.py` | Two-stage pipeline: EasyOCR pre-filter + GPT-4o extraction |
 | `email_sender.py` | Builds HTML email and sends via Resend |
 | `seen.py` | Tracks processed catalogs; skips until expiry date passes |
+| `cadence.py` | Logs each store's observed refresh cadence for anomaly detection |
+| `deals.py` | Builds/prunes `deals.json`, the public feed for the portfolio site |
 | `config.py` | All config in one place — env vars, store list, keywords |
 | `seen_catalogs.json` | Auto-generated; committed by CI to persist state |
+| `store_history.json` | Auto-generated; per-store catalog history for cadence.py |
+| `deals.json` | Auto-generated; live deals feed consumed by the portfolio site |
 | `.env` | Your secrets — never committed |
 
 ---
@@ -115,7 +103,7 @@ The included workflow runs every **Monday and Tuesday at 09:00 Vilnius time** an
 ## Notes
 
 - Catalog pages are processed sequentially to keep memory usage low
-- Tesseract is used only as a cheap keyword filter — GPT-4o does the actual extraction
+- EasyOCR is used only as a free, open-source keyword filter — GPT-4o does the actual extraction
 - GPT-4o is called with batches of up to 4 images per request to minimise API cost
 - Each store's catalog is re-checked automatically once its listed expiry date passes
 - Prices are extracted by GPT-4o directly from the catalog images — verify before buying

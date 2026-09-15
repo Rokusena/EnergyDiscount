@@ -53,6 +53,24 @@ def is_seen(url: str) -> bool:
     return True
 
 
+def get_known_expiry(url: str) -> date | None:
+    """
+    Return the last known expiry date for a URL we've already processed,
+    or None if we've never seen it or it has no recorded expiry.
+    Lets callers skip re-fetching a page we already know isn't due yet.
+    """
+    entry = _load().get(url)
+    if not isinstance(entry, dict):
+        return None
+    expires = entry.get("expires")
+    if not expires:
+        return None
+    try:
+        return date.fromisoformat(expires)
+    except ValueError:
+        return None
+
+
 def mark_seen(url: str, expires: str | None = None) -> None:
     """
     Mark a catalog URL as processed.
