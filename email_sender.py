@@ -253,7 +253,7 @@ def _build_html(store_results: list[dict], today: str) -> str:
       ✓ PATIKRINTI VISUS →
     </a>
     <div class="muted" style="font-family:{_MONO};font-size:10px;color:{_MUTED};text-align:center;padding-top:6px;letter-spacing:0.04em;">
-      visi pasiūlymai vienoje vietoje, rikiuota pagal kainą už litrą
+      visi pasiūlymai vienoje vietoje, sugrupuota pagal parduotuvę
     </div>
   </td></tr>
 

@@ -26,6 +26,19 @@ def _parse_float(s) -> float | None:
 
 
 def _parse_volume_liters(product: str) -> float | None:
+    # Multipacks first: "4 x 0.5l" is 2L, not 0.5L. Matching the single-unit
+    # patterns first would silently price a 4-pack as one can.
+    # Note "2 rūšių" (2 varieties) is not a multiplier, so an explicit x is required.
+    m = re.search(r"(\d+)\s*[x×]\s*(\d+(?:[.,]\d+)?)\s*(ml|l)\b", product, re.IGNORECASE)
+    if m:
+        count  = int(m.group(1))
+        volume = float(m.group(2).replace(",", "."))
+        if m.group(3).lower() == "ml":
+            volume /= 1000
+        total = count * volume
+        if 0 < total < 20:
+            return round(total, 4)
+
     # millilitres: "330ml", "355 ml", "500ML"
     m = re.search(r"(\d+(?:[.,]\d+)?)\s*ml", product, re.IGNORECASE)
     if m:
