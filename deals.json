@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T09:41:34Z",
+  "generated_at": "2026-09-16T12:33:27Z",
   "deals": [
     {
       "store": "IKI",
@@ -57,17 +57,6 @@
       "price_per_liter": 1.78
     },
     {
-      "store": "Norfa",
-      "product": "Battery 0.33l, 7 rūšių",
-      "price": 0.5,
-      "old_price": 0.83,
-      "valid_until": "2026-09-16",
-      "scraped_at": "2026-09-15T09:36:46Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20260903--20260916.htm",
-      "discount_percent": 40,
-      "price_per_liter": 1.52
-    },
-    {
       "store": "Rimi",
       "product": "Red Bull 0.25l",
       "price": 1.19,
@@ -101,28 +90,6 @@
       "price_per_liter": 4.76
     },
     {
-      "store": "Aibė",
-      "product": "Red Bull 0.473l, 2 rūšių",
-      "price": 2.49,
-      "old_price": null,
-      "valid_until": "2026-09-15",
-      "scraped_at": "2026-09-15T09:41:00Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 5.26
-    },
-    {
-      "store": "Aibė",
-      "product": "Dynamit 0.5l, 2 rūšių",
-      "price": 0.69,
-      "old_price": null,
-      "valid_until": "2026-09-15",
-      "scraped_at": "2026-09-15T09:41:00Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.38
-    },
-    {
       "store": "Vynoteka",
       "product": "Cult 0.5l, 6 rūšių",
       "price": 0.89,
@@ -143,6 +110,50 @@
       "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.56
+    },
+    {
+      "store": "Norfa",
+      "product": "Monster 0.5 l, 5 rūšių",
+      "price": 1.09,
+      "old_price": 1.68,
+      "valid_until": "2026-09-30",
+      "scraped_at": "2026-09-16T12:31:14Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20260917--20260930.htm",
+      "discount_percent": 35,
+      "price_per_liter": 2.18
+    },
+    {
+      "store": "Aibė",
+      "product": "Dynamit King Size 0.568l",
+      "price": 0.69,
+      "old_price": null,
+      "valid_until": "2026-09-29",
+      "scraped_at": "2026-09-16T12:33:27Z",
+      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.21
+    },
+    {
+      "store": "Aibė",
+      "product": "Monster 0.5l, įvairių rūšių",
+      "price": 1.15,
+      "old_price": null,
+      "valid_until": "2026-09-29",
+      "scraped_at": "2026-09-16T12:33:27Z",
+      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 2.3
+    },
+    {
+      "store": "Aibė",
+      "product": "Red Bull 0.25l, įvairių rūšių",
+      "price": 1.29,
+      "old_price": null,
+      "valid_until": "2026-09-29",
+      "scraped_at": "2026-09-16T12:33:27Z",
+      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 5.16
     }
   ]
 }
