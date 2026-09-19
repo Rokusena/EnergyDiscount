@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T12:06:50Z",
+  "generated_at": "2026-09-19T11:53:34Z",
   "deals": [
     {
       "store": "IKI",
@@ -11,50 +11,6 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20260914--20260920.htm",
       "discount_percent": 30,
       "price_per_liter": 2.33
-    },
-    {
-      "store": "Lidl",
-      "product": "Kong Strong 0.5l Classic",
-      "price": 0.75,
-      "old_price": 0.89,
-      "valid_until": "2026-09-20",
-      "scraped_at": "2026-09-15T09:32:55Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260914--20260920.htm",
-      "discount_percent": 16,
-      "price_per_liter": 1.5
-    },
-    {
-      "store": "Lidl",
-      "product": "Monster 4 x 0.5l",
-      "price": 3.79,
-      "old_price": null,
-      "valid_until": "2026-09-20",
-      "scraped_at": "2026-09-15T09:32:55Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260914--20260920.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.9
-    },
-    {
-      "store": "Lidl",
-      "product": "Kong Strong Parkside 0.25l",
-      "price": 0.35,
-      "old_price": null,
-      "valid_until": "2026-09-20",
-      "scraped_at": "2026-09-15T09:32:55Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260914--20260920.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.4
-    },
-    {
-      "store": "Lidl",
-      "product": "Kong Strong 0.5l assorted flavors",
-      "price": 0.89,
-      "old_price": 0.99,
-      "valid_until": "2026-09-20",
-      "scraped_at": "2026-09-15T09:32:55Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260914--20260920.htm",
-      "discount_percent": 10,
-      "price_per_liter": 1.78
     },
     {
       "store": "Rimi",
@@ -154,6 +110,17 @@
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.16
+    },
+    {
+      "store": "Lidl",
+      "product": "Monster 0.5l įvairių rūšių",
+      "price": 0.99,
+      "old_price": null,
+      "valid_until": "2026-09-27",
+      "scraped_at": "2026-09-19T11:53:34Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260921--20260927.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.98
     }
   ]
 }
