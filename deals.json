@@ -1,17 +1,6 @@
 {
-  "generated_at": "2026-09-19T11:53:34Z",
+  "generated_at": "2026-09-20T12:11:12Z",
   "deals": [
-    {
-      "store": "IKI",
-      "product": "Monster 0.553l",
-      "price": 1.29,
-      "old_price": 1.85,
-      "valid_until": "2026-09-20",
-      "scraped_at": "2026-09-15T09:31:11Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20260914--20260920.htm",
-      "discount_percent": 30,
-      "price_per_liter": 2.33
-    },
     {
       "store": "Rimi",
       "product": "Red Bull 0.25l",
@@ -121,6 +110,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260921--20260927.htm",
       "discount_percent": null,
       "price_per_liter": 1.98
+    },
+    {
+      "store": "IKI",
+      "product": "Red Bull 355 ml, 2 rūšių",
+      "price": 1.79,
+      "old_price": 2.29,
+      "valid_until": "2026-09-27",
+      "scraped_at": "2026-09-20T12:11:12Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20260921--20260927.htm",
+      "discount_percent": 22,
+      "price_per_liter": 5.04
     }
   ]
 }
