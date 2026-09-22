@@ -1,28 +1,6 @@
 {
-  "generated_at": "2026-09-21T13:42:46Z",
+  "generated_at": "2026-09-22T12:32:42Z",
   "deals": [
-    {
-      "store": "Rimi",
-      "product": "Red Bull 0.25l",
-      "price": 1.19,
-      "old_price": 1.69,
-      "valid_until": "2026-09-21",
-      "scraped_at": "2026-09-15T09:38:26Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20260915--20260921.htm",
-      "discount_percent": 30,
-      "price_per_liter": 4.76
-    },
-    {
-      "store": "Rimi",
-      "product": "Monster 500–553ml",
-      "price": 1.09,
-      "old_price": null,
-      "valid_until": "2026-09-21",
-      "scraped_at": "2026-09-15T09:38:26Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20260915--20260921.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.97
-    },
     {
       "store": "Promo",
       "product": "Red Bull 0.25l",
