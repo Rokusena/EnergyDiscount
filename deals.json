@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T12:38:58Z",
+  "generated_at": "2026-09-26T12:14:19Z",
   "deals": [
     {
       "store": "Vynoteka",
@@ -68,17 +68,6 @@
       "price_per_liter": 5.16
     },
     {
-      "store": "Lidl",
-      "product": "Monster 0.5l įvairių rūšių",
-      "price": 0.99,
-      "old_price": null,
-      "valid_until": "2026-09-27",
-      "scraped_at": "2026-09-19T11:53:34Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260921--20260927.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.98
-    },
-    {
       "store": "IKI",
       "product": "Red Bull 355 ml, 2 rūšių",
       "price": 1.79,
@@ -99,6 +88,72 @@
       "catalog_url": "https://www.raskakcija.lt/promo-leidinys.htm",
       "discount_percent": 31,
       "price_per_liter": 2.18
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.5l Citrinų skonio",
+      "price": 0.49,
+      "old_price": null,
+      "valid_until": "2026-10-04",
+      "scraped_at": "2026-09-26T12:10:50Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260928--20261004.htm",
+      "discount_percent": null,
+      "price_per_liter": 0.98
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.5l Classic",
+      "price": 0.49,
+      "old_price": null,
+      "valid_until": "2026-10-04",
+      "scraped_at": "2026-09-26T12:10:50Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260928--20261004.htm",
+      "discount_percent": null,
+      "price_per_liter": 0.98
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.5l Guave Tropica",
+      "price": 0.89,
+      "old_price": null,
+      "valid_until": "2026-10-04",
+      "scraped_at": "2026-09-26T12:10:50Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260928--20261004.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.78
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.25l su kofeinu ir saldikliais",
+      "price": 0.35,
+      "old_price": null,
+      "valid_until": "2026-10-04",
+      "scraped_at": "2026-09-26T12:10:50Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260928--20261004.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.4
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.5l Klasikinis",
+      "price": 0.75,
+      "old_price": null,
+      "valid_until": "2026-10-04",
+      "scraped_at": "2026-09-26T12:10:50Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260928--20261004.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.5
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.25l su kofeinu",
+      "price": 0.25,
+      "old_price": 0.35,
+      "valid_until": "2026-10-04",
+      "scraped_at": "2026-09-26T12:10:50Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20260928--20261004.htm",
+      "discount_percent": 29,
+      "price_per_liter": 1.0
     }
   ]
 }
