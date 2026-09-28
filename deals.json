@@ -1,28 +1,6 @@
 {
-  "generated_at": "2026-09-27T13:00:17Z",
+  "generated_at": "2026-09-28T15:04:05Z",
   "deals": [
-    {
-      "store": "Vynoteka",
-      "product": "Cult 0.5l, 6 rūšių",
-      "price": 0.89,
-      "old_price": 1.39,
-      "valid_until": "2026-09-27",
-      "scraped_at": "2026-09-15T09:41:34Z",
-      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
-      "discount_percent": 36,
-      "price_per_liter": 1.78
-    },
-    {
-      "store": "Vynoteka",
-      "product": "Red Bull 0.25l, 10 rūšių",
-      "price": 1.39,
-      "old_price": null,
-      "valid_until": "2026-09-27",
-      "scraped_at": "2026-09-15T09:41:34Z",
-      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 5.56
-    },
     {
       "store": "Norfa",
       "product": "Monster 0.5 l, 5 rūšių",
@@ -176,6 +154,28 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20260928--20261004.htm",
       "discount_percent": 32,
       "price_per_liter": 2.3
+    },
+    {
+      "store": "Vynoteka",
+      "product": "Hell 0.25l",
+      "price": 0.69,
+      "old_price": 0.89,
+      "valid_until": "2026-10-11",
+      "scraped_at": "2026-09-28T15:04:05Z",
+      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
+      "discount_percent": 22,
+      "price_per_liter": 2.76
+    },
+    {
+      "store": "Vynoteka",
+      "product": "Monster 0.5l",
+      "price": 1.09,
+      "old_price": null,
+      "valid_until": "2026-10-11",
+      "scraped_at": "2026-09-28T15:04:05Z",
+      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 2.18
     }
   ]
 }
