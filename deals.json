@@ -1,50 +1,6 @@
 {
-  "generated_at": "2026-09-29T13:56:10Z",
+  "generated_at": "2026-09-30T13:27:10Z",
   "deals": [
-    {
-      "store": "Norfa",
-      "product": "Monster 0.5 l, 5 rūšių",
-      "price": 1.09,
-      "old_price": 1.68,
-      "valid_until": "2026-09-30",
-      "scraped_at": "2026-09-16T12:31:14Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20260917--20260930.htm",
-      "discount_percent": 35,
-      "price_per_liter": 2.18
-    },
-    {
-      "store": "Aibė",
-      "product": "Dynamit King Size 0.568l",
-      "price": 0.69,
-      "old_price": null,
-      "valid_until": "2026-09-29",
-      "scraped_at": "2026-09-16T12:33:27Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.21
-    },
-    {
-      "store": "Aibė",
-      "product": "Monster 0.5l, įvairių rūšių",
-      "price": 1.15,
-      "old_price": null,
-      "valid_until": "2026-09-29",
-      "scraped_at": "2026-09-16T12:33:27Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 2.3
-    },
-    {
-      "store": "Aibė",
-      "product": "Red Bull 0.25l, įvairių rūšių",
-      "price": 1.29,
-      "old_price": null,
-      "valid_until": "2026-09-29",
-      "scraped_at": "2026-09-16T12:33:27Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 5.16
-    },
     {
       "store": "Promo",
       "product": "Monster 0.5l",
@@ -176,6 +132,17 @@
       "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 2.18
+    },
+    {
+      "store": "Norfa",
+      "product": "Red Bull 0.25l",
+      "price": 1.05,
+      "old_price": 1.69,
+      "valid_until": "2026-10-14",
+      "scraped_at": "2026-09-30T13:25:55Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20261001--20261014.htm",
+      "discount_percent": 38,
+      "price_per_liter": 4.2
     }
   ]
 }
