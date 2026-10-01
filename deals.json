@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T13:27:10Z",
+  "generated_at": "2026-10-01T14:19:07Z",
   "deals": [
     {
       "store": "Promo",
@@ -143,6 +143,28 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20261001--20261014.htm",
       "discount_percent": 38,
       "price_per_liter": 4.2
+    },
+    {
+      "store": "Aibė",
+      "product": "Red Bull 0.355l, 2 rūšių",
+      "price": 1.79,
+      "old_price": null,
+      "valid_until": "2026-10-13",
+      "scraped_at": "2026-10-01T14:19:07Z",
+      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 5.04
+    },
+    {
+      "store": "Aibė",
+      "product": "Cult 0.5l, įvairių rūšių",
+      "price": 0.99,
+      "old_price": null,
+      "valid_until": "2026-10-13",
+      "scraped_at": "2026-10-01T14:19:07Z",
+      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.98
     }
   ]
 }
