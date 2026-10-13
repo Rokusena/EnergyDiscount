@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T16:39:59Z",
+  "generated_at": "2026-10-13T14:55:39Z",
   "deals": [
     {
       "store": "Norfa",
@@ -31,28 +31,6 @@
       "valid_until": "2026-10-13",
       "scraped_at": "2026-10-01T14:19:07Z",
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.98
-    },
-    {
-      "store": "Rimi",
-      "product": "Red Bull 0.25l (12 rūšių)",
-      "price": 1.19,
-      "old_price": 1.69,
-      "valid_until": "2026-10-12",
-      "scraped_at": "2026-10-06T14:01:44Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261006--20261012.htm",
-      "discount_percent": 30,
-      "price_per_liter": 4.76
-    },
-    {
-      "store": "Rimi",
-      "product": "Cult 0.5l (11 rūšių)",
-      "price": 0.99,
-      "old_price": null,
-      "valid_until": "2026-10-12",
-      "scraped_at": "2026-10-06T14:01:44Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261006--20261012.htm",
       "discount_percent": null,
       "price_per_liter": 1.98
     },
@@ -143,6 +121,28 @@
       "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.56
+    },
+    {
+      "store": "Rimi",
+      "product": "Red Bull 4x250 ml, 2 rūšys",
+      "price": 3.99,
+      "old_price": 5.99,
+      "valid_until": "2026-10-19",
+      "scraped_at": "2026-10-13T14:55:39Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261013--20261019.htm",
+      "discount_percent": 33,
+      "price_per_liter": 3.99
+    },
+    {
+      "store": "Rimi",
+      "product": "Monster 0.5 arba 0.553 l, 19 rūšių",
+      "price": 1.09,
+      "old_price": null,
+      "valid_until": "2026-10-19",
+      "scraped_at": "2026-10-13T14:55:39Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261013--20261019.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.97
     }
   ]
 }
