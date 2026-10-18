@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T11:30:21Z",
+  "generated_at": "2026-10-18T12:04:51Z",
   "deals": [
     {
       "store": "Šilas",
@@ -33,39 +33,6 @@
       "catalog_url": "https://www.raskakcija.lt/promo-leidinys.htm",
       "discount_percent": 32,
       "price_per_liter": 2.15
-    },
-    {
-      "store": "IKI",
-      "product": "Cult 0.5l, įvairių rūšių",
-      "price": 1.69,
-      "old_price": null,
-      "valid_until": "2026-10-18",
-      "scraped_at": "2026-10-11T13:55:15Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261012--20261018.htm",
-      "discount_percent": null,
-      "price_per_liter": 3.38
-    },
-    {
-      "store": "IKI",
-      "product": "Monster 0.553l",
-      "price": 1.19,
-      "old_price": 1.85,
-      "valid_until": "2026-10-18",
-      "scraped_at": "2026-10-11T13:55:15Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261012--20261018.htm",
-      "discount_percent": 36,
-      "price_per_liter": 2.15
-    },
-    {
-      "store": "IKI",
-      "product": "Cult 0.5l",
-      "price": 1.69,
-      "old_price": null,
-      "valid_until": "2026-10-18",
-      "scraped_at": "2026-10-11T13:55:15Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261012--20261018.htm",
-      "discount_percent": null,
-      "price_per_liter": 3.38
     },
     {
       "store": "Vynoteka",
@@ -132,6 +99,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261019--20261025.htm",
       "discount_percent": null,
       "price_per_liter": 2.08
+    },
+    {
+      "store": "IKI",
+      "product": "Red Bull 250 ml, įvairių rūšių",
+      "price": 1.29,
+      "old_price": 1.69,
+      "valid_until": "2026-10-25",
+      "scraped_at": "2026-10-18T12:04:51Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261019--20261025.htm",
+      "discount_percent": 24,
+      "price_per_liter": 5.16
     }
   ]
 }
