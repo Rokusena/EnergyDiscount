@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T12:49:17Z",
+  "generated_at": "2026-10-22T12:51:44Z",
   "deals": [
     {
       "store": "Vynoteka",
@@ -77,6 +77,17 @@
       "catalog_url": "https://www.raskakcija.lt/promo-leidinys.htm",
       "discount_percent": 31,
       "price_per_liter": 2.18
+    },
+    {
+      "store": "Šilas",
+      "product": "Burn 0.25l, įvairių rūšių",
+      "price": 0.79,
+      "old_price": 0.98,
+      "valid_until": "2026-11-03",
+      "scraped_at": "2026-10-22T12:51:44Z",
+      "catalog_url": "https://www.raskakcija.lt/silas-leidinys.htm",
+      "discount_percent": 19,
+      "price_per_liter": 3.16
     }
   ]
 }
