@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T12:28:09Z",
+  "generated_at": "2026-10-24T11:56:54Z",
   "deals": [
     {
       "store": "Vynoteka",
@@ -33,17 +33,6 @@
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.26
-    },
-    {
-      "store": "Lidl",
-      "product": "Monster Mega arba Mega Ultra Zero 3 x 0.553l",
-      "price": 3.45,
-      "old_price": null,
-      "valid_until": "2026-10-25",
-      "scraped_at": "2026-10-17T11:30:21Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261019--20261025.htm",
-      "discount_percent": null,
-      "price_per_liter": 2.08
     },
     {
       "store": "IKI",
@@ -88,6 +77,28 @@
       "catalog_url": "https://www.raskakcija.lt/silas-leidinys.htm",
       "discount_percent": 19,
       "price_per_liter": 3.16
+    },
+    {
+      "store": "Lidl",
+      "product": "Red Bull 250 ml įvairių skonių",
+      "price": 1.19,
+      "old_price": null,
+      "valid_until": "2026-11-01",
+      "scraped_at": "2026-10-24T11:56:54Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261026--20261101.htm",
+      "discount_percent": null,
+      "price_per_liter": 4.76
+    },
+    {
+      "store": "Lidl",
+      "product": "Red Bull 4 x 250 ml",
+      "price": 4.19,
+      "old_price": null,
+      "valid_until": "2026-11-01",
+      "scraped_at": "2026-10-24T11:56:54Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261026--20261101.htm",
+      "discount_percent": null,
+      "price_per_liter": 4.19
     }
   ]
 }
