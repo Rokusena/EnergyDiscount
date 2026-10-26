@@ -32,7 +32,7 @@
     "expires": "2026-10-27"
   },
   "https://www.raskakcija.lt/vynoteka-leidinys.htm": {
-    "seen_at": "2026-10-12T16:39:59.333837+00:00",
+    "seen_at": "2026-10-26T14:06:11.489025+00:00",
     "expires": "2026-10-25"
   },
   "https://www.raskakcija.lt/naujausias-norfa-kaininis-katalogas-20260917--20260930.htm": {
@@ -129,6 +129,10 @@
   },
   "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261026--20261101.htm": {
     "seen_at": "2026-10-24T11:56:54.884495+00:00",
+    "expires": "2026-11-01"
+  },
+  "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261026--20261101.htm": {
+    "seen_at": "2026-10-26T14:05:12.251554+00:00",
     "expires": "2026-11-01"
   }
 }
