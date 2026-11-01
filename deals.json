@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T13:27:32Z",
+  "generated_at": "2026-11-01T14:14:21Z",
   "deals": [
     {
       "store": "Promo",
@@ -22,17 +22,6 @@
       "catalog_url": "https://www.raskakcija.lt/silas-leidinys.htm",
       "discount_percent": 19,
       "price_per_liter": 3.16
-    },
-    {
-      "store": "IKI",
-      "product": "Monster 0.5l",
-      "price": 1.09,
-      "old_price": 1.69,
-      "valid_until": "2026-11-01",
-      "scraped_at": "2026-10-26T14:05:12Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261026--20261101.htm",
-      "discount_percent": 36,
-      "price_per_liter": 2.18
     },
     {
       "store": "Vynoteka",
