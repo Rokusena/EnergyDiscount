@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T14:14:21Z",
+  "generated_at": "2026-11-02T17:07:56Z",
   "deals": [
     {
       "store": "Promo",
@@ -88,6 +88,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261102--20261108.htm",
       "discount_percent": 9,
       "price_per_liter": 1.98
+    },
+    {
+      "store": "Maxima",
+      "product": "Red Bull advento kalendorius (24 skardinės po 250 ml)",
+      "price": 39.99,
+      "old_price": null,
+      "valid_until": "2026-11-09",
+      "scraped_at": "2026-11-02T17:07:56Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261103--20261109.htm",
+      "discount_percent": null,
+      "price_per_liter": 159.96
     }
   ]
 }
