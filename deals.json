@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T17:07:56Z",
+  "generated_at": "2026-11-03T15:04:17Z",
   "deals": [
     {
       "store": "Promo",
@@ -99,6 +99,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261103--20261109.htm",
       "discount_percent": null,
       "price_per_liter": 159.96
+    },
+    {
+      "store": "Rimi",
+      "product": "Battery 0.5l",
+      "price": 0.99,
+      "old_price": null,
+      "valid_until": "2026-11-09",
+      "scraped_at": "2026-11-03T15:04:17Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261103--20261109.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.98
     }
   ]
 }
