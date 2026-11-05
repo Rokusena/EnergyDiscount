@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T15:18:02Z",
+  "generated_at": "2026-11-05T15:23:25Z",
   "deals": [
     {
       "store": "Vynoteka",
@@ -88,6 +88,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261103--20261109.htm",
       "discount_percent": null,
       "price_per_liter": 1.98
+    },
+    {
+      "store": "Šilas",
+      "product": "Red Bull advento kalendorius 24 vnt.",
+      "price": 39.99,
+      "old_price": null,
+      "valid_until": "2026-11-17",
+      "scraped_at": "2026-11-05T15:23:25Z",
+      "catalog_url": "https://www.raskakcija.lt/silas-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": null
     }
   ]
 }
