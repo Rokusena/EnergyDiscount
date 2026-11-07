@@ -152,7 +152,7 @@
     "expires": "2026-11-08"
   },
   "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261102--20251108.htm": {
-    "seen_at": "2026-11-06T14:57:33.483131+00:00",
+    "seen_at": "2026-11-07T13:50:44.112569+00:00",
     "expires": "2025-11-08"
   },
   "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261103--20261109.htm": {
@@ -162,5 +162,9 @@
   "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261103--20261109.htm": {
     "seen_at": "2026-11-03T15:04:17.732008+00:00",
     "expires": "2026-11-09"
+  },
+  "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261109--20261115.htm": {
+    "seen_at": "2026-11-07T13:52:49.891253+00:00",
+    "expires": "2026-11-15"
   }
 }

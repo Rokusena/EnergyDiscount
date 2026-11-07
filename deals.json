@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T14:57:33Z",
+  "generated_at": "2026-11-07T13:52:49Z",
   "deals": [
     {
       "store": "Vynoteka",
@@ -55,17 +55,6 @@
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.16
-    },
-    {
-      "store": "Lidl",
-      "product": "Monster 500 ml, įvairių skonių",
-      "price": 0.99,
-      "old_price": 1.09,
-      "valid_until": "2026-11-08",
-      "scraped_at": "2026-10-31T13:27:32Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261102--20261108.htm",
-      "discount_percent": 9,
-      "price_per_liter": 1.98
     },
     {
       "store": "Maxima",
