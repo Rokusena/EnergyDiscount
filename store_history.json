@@ -133,6 +133,11 @@
       "seen_at": "2026-11-02T16:52:55Z",
       "expires": "2026-11-09",
       "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261103--20261109.htm"
+    },
+    {
+      "seen_at": "2026-11-10T15:27:28Z",
+      "expires": "2026-11-16",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261110--20261116.htm"
     }
   ],
   "Norfa": [
@@ -202,6 +207,11 @@
       "seen_at": "2026-11-03T14:54:00Z",
       "expires": "2026-11-09",
       "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261103--20261109.htm"
+    },
+    {
+      "seen_at": "2026-11-10T15:27:28Z",
+      "expires": "2026-11-16",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261110--20261116.htm"
     }
   ],
   "Šilas": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T17:15:04Z",
+  "generated_at": "2026-11-10T15:39:34Z",
   "deals": [
     {
       "store": "Norfa",
@@ -46,28 +46,6 @@
       "price_per_liter": 5.16
     },
     {
-      "store": "Maxima",
-      "product": "Red Bull advento kalendorius (24 skardinės po 250 ml)",
-      "price": 39.99,
-      "old_price": null,
-      "valid_until": "2026-11-09",
-      "scraped_at": "2026-11-02T17:07:56Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261103--20261109.htm",
-      "discount_percent": null,
-      "price_per_liter": 159.96
-    },
-    {
-      "store": "Rimi",
-      "product": "Battery 0.5l",
-      "price": 0.99,
-      "old_price": null,
-      "valid_until": "2026-11-09",
-      "scraped_at": "2026-11-03T15:04:17Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261103--20261109.htm",
-      "discount_percent": null,
-      "price_per_liter": 1.98
-    },
-    {
       "store": "Šilas",
       "product": "Red Bull advento kalendorius 24 vnt.",
       "price": 39.99,
@@ -110,6 +88,50 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261109--20261115.htm",
       "discount_percent": null,
       "price_per_liter": 5.12
+    },
+    {
+      "store": "Maxima",
+      "product": "Red Bull 24 x 0.25l advento kalendorius",
+      "price": 39.99,
+      "old_price": null,
+      "valid_until": "2026-11-16",
+      "scraped_at": "2026-11-10T15:33:52Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261110--20261116.htm",
+      "discount_percent": null,
+      "price_per_liter": 6.67
+    },
+    {
+      "store": "Rimi",
+      "product": "Red Bull 0.25l (12 rūšių)",
+      "price": 1.19,
+      "old_price": 1.69,
+      "valid_until": "2026-11-16",
+      "scraped_at": "2026-11-10T15:38:33Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261110--20261116.htm",
+      "discount_percent": 30,
+      "price_per_liter": 4.76
+    },
+    {
+      "store": "Rimi",
+      "product": "Cult 0.5l (11 rūšių)",
+      "price": 0.99,
+      "old_price": null,
+      "valid_until": "2026-11-16",
+      "scraped_at": "2026-11-10T15:38:33Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261110--20261116.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.98
+    },
+    {
+      "store": "Vynoteka",
+      "product": "Monster 0.5l",
+      "price": 1.09,
+      "old_price": null,
+      "valid_until": "2026-11-22",
+      "scraped_at": "2026-11-10T15:39:34Z",
+      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
+      "discount_percent": null,
+      "price_per_liter": 2.18
     }
   ]
 }
