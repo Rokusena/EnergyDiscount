@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T15:09:43Z",
+  "generated_at": "2026-11-14T14:03:04Z",
   "deals": [
     {
       "store": "Šilas",
@@ -110,6 +110,28 @@
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.04
+    },
+    {
+      "store": "Lidl",
+      "product": "Cult 0.5 l įvairių rūšių",
+      "price": 0.79,
+      "old_price": null,
+      "valid_until": "2026-11-22",
+      "scraped_at": "2026-11-14T14:03:04Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261116--20261122.htm",
+      "discount_percent": null,
+      "price_per_liter": 1.58
+    },
+    {
+      "store": "Lidl",
+      "product": "Kong Strong 0.25 l Sugar Free",
+      "price": 0.28,
+      "old_price": 0.35,
+      "valid_until": "2026-11-22",
+      "scraped_at": "2026-11-14T14:03:04Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261116--20261122.htm",
+      "discount_percent": 20,
+      "price_per_liter": 1.12
     }
   ]
 }
