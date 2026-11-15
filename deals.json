@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T14:03:04Z",
+  "generated_at": "2026-11-15T14:40:19Z",
   "deals": [
     {
       "store": "Šilas",
@@ -11,39 +11,6 @@
       "catalog_url": "https://www.raskakcija.lt/silas-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": null
-    },
-    {
-      "store": "IKI",
-      "product": "Red Bull Advent calendar 24x0.25l",
-      "price": 34.99,
-      "old_price": 44.99,
-      "valid_until": "2026-11-15",
-      "scraped_at": "2026-11-08T14:12:54Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261109--20261115.htm",
-      "discount_percent": 22,
-      "price_per_liter": 5.83
-    },
-    {
-      "store": "IKI",
-      "product": "Monster 0.553l",
-      "price": 1.19,
-      "old_price": 1.85,
-      "valid_until": "2026-11-15",
-      "scraped_at": "2026-11-08T14:12:54Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261109--20261115.htm",
-      "discount_percent": 36,
-      "price_per_liter": 2.15
-    },
-    {
-      "store": "IKI",
-      "product": "Cult 0.33l/0.5l",
-      "price": 1.69,
-      "old_price": null,
-      "valid_until": "2026-11-15",
-      "scraped_at": "2026-11-08T14:12:54Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261109--20261115.htm",
-      "discount_percent": null,
-      "price_per_liter": 5.12
     },
     {
       "store": "Maxima",
@@ -132,6 +99,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261116--20261122.htm",
       "discount_percent": 20,
       "price_per_liter": 1.12
+    },
+    {
+      "store": "IKI",
+      "product": "Red Bull 0.355l",
+      "price": 1.75,
+      "old_price": 2.29,
+      "valid_until": "2026-11-22",
+      "scraped_at": "2026-11-15T14:40:19Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261116--20261122.htm",
+      "discount_percent": 24,
+      "price_per_liter": 4.93
     }
   ]
 }
