@@ -1,17 +1,6 @@
 {
-  "generated_at": "2026-11-17T16:48:57Z",
+  "generated_at": "2026-11-18T16:19:08Z",
   "deals": [
-    {
-      "store": "Šilas",
-      "product": "Red Bull advento kalendorius 24 vnt.",
-      "price": 39.99,
-      "old_price": null,
-      "valid_until": "2026-11-17",
-      "scraped_at": "2026-11-05T15:23:25Z",
-      "catalog_url": "https://www.raskakcija.lt/silas-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": null
-    },
     {
       "store": "Vynoteka",
       "product": "Monster 0.5l",
@@ -88,6 +77,28 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261117--20261123.htm",
       "discount_percent": 41,
       "price_per_liter": 1.98
+    },
+    {
+      "store": "Promo",
+      "product": "Monster 0.5l, various variants",
+      "price": 1.19,
+      "old_price": 1.59,
+      "valid_until": "2026-12-01",
+      "scraped_at": "2026-11-18T16:19:08Z",
+      "catalog_url": "https://www.raskakcija.lt/promo-leidinys.htm",
+      "discount_percent": 25,
+      "price_per_liter": 2.38
+    },
+    {
+      "store": "Promo",
+      "product": "Red Bull Advent Calendar 24 x 0.25l",
+      "price": 34.99,
+      "old_price": 39.99,
+      "valid_until": "2026-12-01",
+      "scraped_at": "2026-11-18T16:19:08Z",
+      "catalog_url": "https://www.raskakcija.lt/promo-leidinys.htm",
+      "discount_percent": 13,
+      "price_per_liter": 5.83
     }
   ]
 }
