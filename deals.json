@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T15:12:51Z",
+  "generated_at": "2026-11-22T15:13:08Z",
   "deals": [
     {
       "store": "Vynoteka",
@@ -33,17 +33,6 @@
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.04
-    },
-    {
-      "store": "IKI",
-      "product": "Red Bull 0.355l",
-      "price": 1.75,
-      "old_price": 2.29,
-      "valid_until": "2026-11-22",
-      "scraped_at": "2026-11-15T14:40:19Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261116--20261122.htm",
-      "discount_percent": 24,
-      "price_per_liter": 4.93
     },
     {
       "store": "Rimi",
@@ -99,6 +88,17 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-lidl-kaininis-katalogas-20261123--20261129.htm",
       "discount_percent": null,
       "price_per_liter": 2.08
+    },
+    {
+      "store": "IKI",
+      "product": "Dynamit 0.5l, 0.568l įvairių rūšių",
+      "price": 0.79,
+      "old_price": 1.69,
+      "valid_until": "2026-11-29",
+      "scraped_at": "2026-11-22T15:13:08Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261123--20261129.htm",
+      "discount_percent": 53,
+      "price_per_liter": 1.58
     }
   ]
 }
