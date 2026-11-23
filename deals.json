@@ -1,17 +1,6 @@
 {
-  "generated_at": "2026-11-22T15:13:08Z",
+  "generated_at": "2026-11-23T19:09:28Z",
   "deals": [
-    {
-      "store": "Vynoteka",
-      "product": "Monster 0.5l",
-      "price": 1.09,
-      "old_price": null,
-      "valid_until": "2026-11-22",
-      "scraped_at": "2026-11-10T15:39:34Z",
-      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 2.18
-    },
     {
       "store": "Aibė",
       "product": "Monster 0.5 l, įvairių rūšių",
@@ -99,6 +88,50 @@
       "catalog_url": "https://www.raskakcija.lt/naujausias-iki-kaininis-katalogas-20261123--20261129.htm",
       "discount_percent": 53,
       "price_per_liter": 1.58
+    },
+    {
+      "store": "Maxima",
+      "product": "Red Bull advento kalendorius 24 x 250 ml",
+      "price": 34.99,
+      "old_price": 39.99,
+      "valid_until": "2026-11-30",
+      "scraped_at": "2026-11-23T19:08:17Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261124--20261130.htm",
+      "discount_percent": 13,
+      "price_per_liter": 5.83
+    },
+    {
+      "store": "Maxima",
+      "product": "Cult 0.5 l, 4 rūšių",
+      "price": 1.59,
+      "old_price": 1.39,
+      "valid_until": "2026-11-30",
+      "scraped_at": "2026-11-23T19:08:17Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-maxima-kaininis-katalogas-20261124--20261130.htm",
+      "discount_percent": null,
+      "price_per_liter": 3.18
+    },
+    {
+      "store": "Vynoteka",
+      "product": "Cult 0.5l, 7 rūšių",
+      "price": 0.89,
+      "old_price": 1.39,
+      "valid_until": "2026-12-06",
+      "scraped_at": "2026-11-23T19:09:28Z",
+      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
+      "discount_percent": 36,
+      "price_per_liter": 1.78
+    },
+    {
+      "store": "Vynoteka",
+      "product": "Hell 0.25l, 4 rūšių",
+      "price": 0.69,
+      "old_price": 0.89,
+      "valid_until": "2026-12-06",
+      "scraped_at": "2026-11-23T19:09:28Z",
+      "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
+      "discount_percent": 22,
+      "price_per_liter": 2.76
     }
   ]
 }
