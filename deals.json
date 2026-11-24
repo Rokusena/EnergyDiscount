@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T19:09:28Z",
+  "generated_at": "2026-11-24T18:47:00Z",
   "deals": [
     {
       "store": "Aibė",
@@ -22,17 +22,6 @@
       "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
       "discount_percent": null,
       "price_per_liter": 5.04
-    },
-    {
-      "store": "Rimi",
-      "product": "Monster 0.5 l",
-      "price": 0.99,
-      "old_price": 1.69,
-      "valid_until": "2026-11-23",
-      "scraped_at": "2026-11-17T16:48:57Z",
-      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261117--20261123.htm",
-      "discount_percent": 41,
-      "price_per_liter": 1.98
     },
     {
       "store": "Promo",
@@ -132,6 +121,17 @@
       "catalog_url": "https://www.raskakcija.lt/vynoteka-leidinys.htm",
       "discount_percent": 22,
       "price_per_liter": 2.76
+    },
+    {
+      "store": "Rimi",
+      "product": "Red Bull 355 ml, 2 rūšys",
+      "price": 1.69,
+      "old_price": 2.29,
+      "valid_until": "2026-11-30",
+      "scraped_at": "2026-11-24T18:47:00Z",
+      "catalog_url": "https://www.raskakcija.lt/naujausias-rimi-kaininis-katalogas-20261124--20261130.htm",
+      "discount_percent": 26,
+      "price_per_liter": 4.76
     }
   ]
 }
