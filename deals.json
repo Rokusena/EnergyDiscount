@@ -1,28 +1,6 @@
 {
-  "generated_at": "2026-11-24T18:47:00Z",
+  "generated_at": "2026-11-25T17:57:36Z",
   "deals": [
-    {
-      "store": "Aibė",
-      "product": "Monster 0.5 l, įvairių rūšių",
-      "price": 1.15,
-      "old_price": null,
-      "valid_until": "2026-11-24",
-      "scraped_at": "2026-11-12T15:51:16Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 2.3
-    },
-    {
-      "store": "Aibė",
-      "product": "Red Bull 0.355 l",
-      "price": 1.79,
-      "old_price": null,
-      "valid_until": "2026-11-24",
-      "scraped_at": "2026-11-12T15:51:16Z",
-      "catalog_url": "https://www.raskakcija.lt/aibe-leidinys.htm",
-      "discount_percent": null,
-      "price_per_liter": 5.04
-    },
     {
       "store": "Promo",
       "product": "Monster 0.5l, various variants",
